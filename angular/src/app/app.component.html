@@ -1,0 +1,27 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  <p class="subtitle">A rich text editor component for Angular</p>
+
+  <div class="editor-section">
+    <h2>Editor</h2>
+    <ngx-text-igniter
+      [config]="config"
+      editorId="main-editor"
+      (contentChange)="onContentChange($event)"
+    ></ngx-text-igniter>
+  </div>
+
+  <div class="output-section">
+    <h2>Output Preview</h2>
+
+    <div class="output-box">
+      <h3>HTML Output</h3>
+      <pre>{{ editorContent.html }}</pre>
+    </div>
+
+    <div class="output-box">
+      <h3>Plain Text Output</h3>
+      <pre>{{ editorContent.text }}</pre>
+    </div>
+  </div>
+</div>
