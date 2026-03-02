@@ -4,11 +4,8 @@
 
   <div class="editor-section">
     <h2>Editor</h2>
-    <ngx-text-igniter
-      [config]="config"
-      editorId="main-editor"
-      (contentChange)="onContentChange($event)"
-    ></ngx-text-igniter>
+    <ngx-text-igniter [config]="config" editorId="main-editor"
+      (contentChange)="onContentChange($event)"></ngx-text-igniter>
   </div>
 
   <div class="output-section">
@@ -20,8 +17,8 @@
     </div>
 
     <div class="output-box">
-      <h3>Plain Text Output</h3>
-      <pre>{{ editorContent.text }}</pre>
+      <h3>Text Output</h3>
+      <span [innerHTML]="outputStr"></span>
     </div>
   </div>
 </div>
