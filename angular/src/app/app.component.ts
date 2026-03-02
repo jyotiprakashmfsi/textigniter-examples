@@ -10,6 +10,7 @@ import { TextIgniterModule } from '@mindfiredigital/textigniter-angular';
 export class AppComponent {
   title = 'TextIgniter Angular Demo';
 
+  outputStr = "";
   config = {
     showToolbar: true,
     features: [
@@ -36,6 +37,7 @@ export class AppComponent {
 
   onContentChange(content: { html: string; text: string }) {
     this.editorContent = content;
-    console.log('Editor content changed:', content);
+    console.log('Editor content changed:', content.html);
+    this.outputStr = content.html;
   }
 }
