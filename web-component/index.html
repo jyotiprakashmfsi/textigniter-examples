@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TextIgniter Web Component - Real-time Updates</title>
+  </head>
+  <body>
+    <text-igniter
+      id="editor-container"
+      config='{
+        "showToolbar": true,
+        "features": ["bold", "italic", "underline", "fontColor"]
+      }'
+    ></text-igniter>
+
+    <!-- Real-time Content Preview -->
+    <div style="margin-top: 20px; padding: 20px; border: 1px solid #ccc;">
+      <h3>Live Preview:</h3>
+      <div>
+        <strong>HTML Content:</strong>
+        <pre
+          id="html-output"
+          style="background: #f5f5f5; padding: 10px; overflow: auto;"
+        ></pre>
+      </div>
+      <div>
+        <strong>Text Content:</strong>
+        <pre
+          id="text-output"
+          style="background: #f5f5f5; padding: 10px; overflow: auto;"
+        ></pre>
+      </div>
+    </div>
+
+    <script
+      type="module"
+      src="/node_modules/@mindfiredigital/textigniter-web-component/dist/index.js"
+    ></script>
+    <script>
+      // Listen to content-change event
+      const editor = document.getElementById('editor-container');
+      editor.addEventListener('content-change', event => {
+        console.log('Content changed:', event.detail);
+        document.getElementById('html-output').textContent = event.detail.html;
+        document.getElementById('text-output').textContent = event.detail.text;
+      });
+    </script>
+  </body>
+</html>

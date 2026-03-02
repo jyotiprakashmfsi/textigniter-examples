@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TextIgniter JS</title>
+    <link
+      rel="stylesheet"
+      href="node_modules/@mindfiredigital/textigniter/dist/index.css"
+    />
+  </head>
+  <body>
+    <div id="editor-container"></div>
+
+    <script src="node_modules/@mindfiredigital/textigniter/dist/index.js"></script>
+    <script>
+      // Initialize TextIgniter
+      const config = {
+        showToolbar: true,
+        features: [
+          'bold',
+          'italic',
+          'underline',
+          'fontFamily',
+          'fontSize',
+          'fontColor',
+          'bgColor',
+          'alignLeft',
+          'alignCenter',
+          'alignRight',
+          'unorderedList',
+          'orderedList',
+          'hyperlink',
+          'image',
+        ],
+      };
+
+      const editor = new TextIgniter('editor-container', config);
+    </script>
+  </body>
+</html>
